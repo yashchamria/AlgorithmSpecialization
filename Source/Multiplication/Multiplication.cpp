@@ -78,7 +78,7 @@ std::string Multiplication::KaratsubaMultiplication_Internal(std::string& lhs, s
         }
     }
 
-	std::string k23 = Add(k2, k3);
+    std::string k23 = Add(k2, k3);
     return Add(k1,k23);
 }
 
@@ -153,7 +153,7 @@ std::string Multiplication::Subtract(std::string& lhs, std::string& rhs)
                     break;
                 }
 
-            	lhs[j] = '9';
+                lhs[j] = '9';
             }
         }
     }
