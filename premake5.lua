@@ -6,12 +6,12 @@ workspace "Algorithms"
 	startproject "Algorithms"
 
 filter "configurations:Debug"
-	defines "MS_DEBUG"
+	defines "ALGO_DEBUG"
 	runtime "Debug"
 	symbols "on"
 
 filter "configurations:Release"
-	defines "MS_RELEASE"
+	defines "ALGO_RELEASE"
 	runtime "Release"
 	optimize "on"
 
@@ -23,22 +23,22 @@ outputDir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "Algorithms"
 	kind "ConsoleApp"
-	location "%{wks.location}/Intermediate/%{prj.name}"
+	location "%{wks.location}/intermediate"
 	staticruntime "off"
 
-	targetdir ("%{wks.location}/Binaries/%{prj.name}/" ..outputDir.. "/")
-	objdir ("%{wks.location}/Intermediate/%{prj.name}/" ..outputDir.. "/")
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
 
 	files
 	{
-		"Source/**.h",
-		"Source/**.cpp",
+		"source/**.h",
+		"source/**.cpp",
 	}
 
 	includedirs
 	{
-		"Source/",
+		"source/",
 	}
 
 	pchheader "PCH.h"
-	pchsource "Source/EntryPoint.cpp"
+	pchsource "source/EntryPoint.cpp"

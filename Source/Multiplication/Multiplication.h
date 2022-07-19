@@ -1,4 +1,6 @@
-class Multiplication
+#pragma once
+
+class Multiplication final
 {
 public:
     static std::string KaratsubaMultiplication(std::string& lhs, std::string& rhs);
