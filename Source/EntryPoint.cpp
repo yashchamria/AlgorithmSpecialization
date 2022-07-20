@@ -1,11 +1,9 @@
 #include "PCH.h"
 #include "Sorting/Sort.h"
-#include "InversionCounting/Inversion.h"
 #include "Multiplication/Multiplication.h"
 
 void KaratsubaMultiplication_example();
 void MergeSort_example();
-void InversionCounting_example();
 void QuickSort_example();
 
 int main(int argc, char** argv)
@@ -14,7 +12,6 @@ int main(int argc, char** argv)
 
     //KaratsubaMultiplication_example();
     //MergeSort_example();
-    //InversionCounting_example();
     QuickSort_example();
 
     std::cin.get();
@@ -84,37 +81,6 @@ void MergeSort_example()
         {
             std::cout << "Failed to save the output file!\n";
         }
-    }
-}
-
-void InversionCounting_example()
-{
-    std::vector<int> input{};
-
-    std::cout << "Reading file...\r";
-    if (std::ifstream inputFile{ "../source/InversionCounting/unsortedArray01.txt", std::ios::in }; inputFile.is_open())
-    {
-        int num{};
-        while (inputFile >> num)
-        {
-            input.push_back(num);
-        }
-        inputFile.close();
-
-        if (!input.empty())
-        {
-            std::cout << "Counting the inversion...\r";
-            const auto start  {std::chrono::high_resolution_clock::now()};
-            const uint64_t pairCount = Inversion::InversionPairCount(&input[0], 0, (int)input.size() - 1);
-            const auto end {std::chrono::high_resolution_clock::now()};
-
-            std::cout << "Finished. Total inversion pair -> " << pairCount << "\n";
-            std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
-        }
-    }
-    else
-    {
-        std::cout << "Failed to open the file!\n";
     }
 }
 
