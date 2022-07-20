@@ -1,6 +1,55 @@
 #include "PCH.h"
 #include "Sort.h"
 
+void Sort::Swap(int& lhs, int& rhs)
+{
+    const int temp = lhs;
+    lhs = rhs;
+    rhs = temp;
+}
+
+bool Sort::IsMedian(int const value, int const lhs, int const rhs)
+{
+    return (value < lhs && value > rhs) || (value > lhs && value < rhs);
+}
+
+void Sort::QuickSort(int array[], const int start, const int end)
+{
+    if (start >= end) { return; }
+
+    // Selecting a median of first, middle and last element as pivot.
+    //const int size = end - start + 1;
+    //if(const int mid = start + (size % 2 == 0 ? size / 2 - 1 : size / 2);
+    //    IsMedian(array[mid], array[start], array[end]))
+    //{
+    //    Swap(array[mid], array[end]);
+    //}
+    //else if (IsMedian(array[start], array[mid], array[end]))
+    //{
+    //    Swap(array[start], array[end]);
+    //}
+
+    // Swapping last element with first to make it a pivot element.
+    //Swap(array[end], array[start]);
+
+    // Default selecting the last element as pivot.
+	const int pivotIndex {end};
+    
+    int minIndex {start};
+    for (int i = minIndex; i < end; ++i)
+    {
+        if (array[i] < array[pivotIndex])
+        {
+            Swap(array[minIndex], array[i]);
+            ++minIndex;
+        }
+    }
+    Swap(array[minIndex], array[pivotIndex]);
+    
+    QuickSort(array, start, minIndex - 1);
+    QuickSort(array, minIndex + 1, end);
+}
+
 void Sort::MergeSort(int array[], const int start, const int end)
 {
     const int size {end - start};

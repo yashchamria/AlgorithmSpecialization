@@ -6,6 +6,7 @@
 void KaratsubaMultiplication_example();
 void MergeSort_example();
 void InversionCounting_example();
+void QuickSort_example();
 
 int main(int argc, char** argv)
 {
@@ -13,7 +14,8 @@ int main(int argc, char** argv)
 
     //KaratsubaMultiplication_example();
     //MergeSort_example();
-    InversionCounting_example();
+    //InversionCounting_example();
+    QuickSort_example();
 
     std::cin.get();
     return 0;
@@ -42,7 +44,7 @@ void MergeSort_example()
     std::vector<int> input{};
 
     std::cout << "Reading file...\r";
-    if (std::ifstream inputFile {"../source/Sorting/unsortedArray.txt", std::ios::in}; inputFile.is_open())
+    if (std::ifstream inputFile {"../source/Sorting/unsortedArray01.txt", std::ios::in}; inputFile.is_open())
     {
         int num{};
         while (inputFile >> num)
@@ -68,7 +70,7 @@ void MergeSort_example()
         std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
         std::cout << "Outputting file...\r";
 
-        if (std::fstream outputFile{ "../binaries/sortedArray.txt", std::ios::out }; outputFile.is_open())
+        if (std::fstream outputFile{ "../binaries/MergeSort.txt", std::ios::out }; outputFile.is_open())
         {
             for (const int number : input)
             {
@@ -76,7 +78,7 @@ void MergeSort_example()
 }
             outputFile.close();
 
-            std::cout << "Output file saved -> binaries/sortedArray.txt\n";
+            std::cout << "Output file saved -> binaries/MergeSort.txt\n";
         }
         else
         {
@@ -90,7 +92,7 @@ void InversionCounting_example()
     std::vector<int> input{};
 
     std::cout << "Reading file...\r";
-    if (std::ifstream inputFile{ "../source/InversionCounting/unsortedArray.txt", std::ios::in }; inputFile.is_open())
+    if (std::ifstream inputFile{ "../source/InversionCounting/unsortedArray01.txt", std::ios::in }; inputFile.is_open())
     {
         int num{};
         while (inputFile >> num)
@@ -113,5 +115,53 @@ void InversionCounting_example()
     else
     {
         std::cout << "Failed to open the file!\n";
+    }
+}
+
+void QuickSort_example()
+{
+    std::vector<int> input{};
+
+    std::cout << "Reading file...\r";
+    if (std::ifstream inputFile{ "../source/Sorting/unsortedArray02.txt", std::ios::in }; inputFile.is_open())
+    {
+        int num{};
+        while (inputFile >> num)
+        {
+            input.push_back(num);
+        }
+        inputFile.close();
+
+    }
+    else
+    {
+        std::cout << "Failed to open the file!\n";
+    }
+
+    if (!input.empty())
+    {
+        std::cout << "Sorting the array...\r";
+        const auto start{ std::chrono::high_resolution_clock::now() };
+        Sort::QuickSort(&input[0], 0, (int)input.size() - 1);
+        const auto end{ std::chrono::high_resolution_clock::now() };
+
+        std::cout << "Array sorted successfully.\n";
+        std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
+        std::cout << "Outputting file...\r";
+
+        if (std::fstream outputFile{ "../binaries/QuickSort.txt", std::ios::out }; outputFile.is_open())
+        {
+            for (const int number : input)
+            {
+                outputFile << number << "\n";
+            }
+            outputFile.close();
+
+            std::cout << "Output file saved -> binaries/QuickSort.txt\n";
+        }
+        else
+        {
+            std::cout << "Failed to save the output file!\n";
+        }
     }
 }
