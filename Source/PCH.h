@@ -9,3 +9,4 @@
 #include <chrono>
 #include <random>
 #include <cmath>
+#include <bitset>

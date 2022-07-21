@@ -1,25 +1,30 @@
 #include "PCH.h"
+#include "Graphs/Graph.h"
+#include "Graphs/MinCut.h"
 #include "Sorting/Sort.h"
 #include "Multiplication/Multiplication.h"
 
-void KaratsubaMultiplication_example();
-void MergeSort_example();
-void QuickSort_example();
+void MergeSort();
+void QuickSort();
+void KargerMinCut();
+void KaratsubaMultiplication();
 
 int main(int argc, char** argv)
 {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    srand((unsigned int)time(nullptr));
 
-    //KaratsubaMultiplication_example();
-    //MergeSort_example();
-    QuickSort_example();
+    // KaratsubaMultiplication();
+    // MergeSort();
+    // QuickSort();
+    KargerMinCut();
 
     std::cin.get();
     return 0;
 }
 
 
-void KaratsubaMultiplication_example()
+void KaratsubaMultiplication()
 {
     std::string lhs{}, rhs{};
     std::cout << "Multiply two integers of any size.\n";
@@ -36,7 +41,7 @@ void KaratsubaMultiplication_example()
     std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
 }
 
-void MergeSort_example()
+void MergeSort()
 {
     std::vector<int> input{};
 
@@ -84,7 +89,7 @@ void MergeSort_example()
     }
 }
 
-void QuickSort_example()
+void QuickSort()
 {
     std::vector<int> input{};
 
@@ -130,4 +135,47 @@ void QuickSort_example()
             std::cout << "Failed to save the output file!\n";
         }
     }
+}
+
+void KargerMinCut()
+{
+    uint64_t vertices {};
+    std::vector<Edge> edges {};
+
+    std::cout << "Reading file...\r";
+    if (std::ifstream inputFile{ "../source/Graphs/GraphData.txt", std::ios::in }; inputFile.is_open())
+    {
+        std::string line {};
+        while (std::getline(inputFile, line))
+        {
+            std::istringstream lineStream {line};
+            Vertex head = 0;
+            lineStream >> head;
+            ++vertices;
+
+            Vertex tail = 0;
+            while(lineStream >> tail)
+            {
+                if(tail > head)
+                {
+                    edges.emplace_back(Edge(head, tail));
+                }
+            }
+        }
+        inputFile.close();
+        std::cout << "Processing Graph...\r";
+
+        const auto start{ std::chrono::high_resolution_clock::now() };
+
+        int minCut = MinCut::KargerMinCut({ vertices, edges }, vertices);
+        std:: cout << "Karger Min Cut Count -> " << minCut << "\n";
+        const auto end{ std::chrono::high_resolution_clock::now() };
+    	std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << ", Iterations: " << vertices << "\n";
+
+    }
+    else
+    {
+        std::cout << "Failed to open the file!\n";
+    }
+
 }
