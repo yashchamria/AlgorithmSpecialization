@@ -5,7 +5,7 @@ class Sort final
 public:
     static void QuickSort(int array[], const int start, const int end);
 
-private:
+public:
     static void Swap(int& lhs, int& rhs);
     static bool IsMedian(int const value, int const lhs, int const rhs);
 

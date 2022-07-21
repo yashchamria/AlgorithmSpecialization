@@ -3,9 +3,11 @@
 #include "Graphs/MinCut.h"
 #include "Sorting/Sort.h"
 #include "Multiplication/Multiplication.h"
+#include "Selection/Selection.h"
 
 void MergeSort();
 void QuickSort();
+void QuickSelect();
 void KargerMinCut();
 void KaratsubaMultiplication();
 
@@ -17,7 +19,8 @@ int main(int argc, char** argv)
     // KaratsubaMultiplication();
     // MergeSort();
     // QuickSort();
-    KargerMinCut();
+    QuickSelect();
+    // KargerMinCut();
 
     std::cin.get();
     return 0;
@@ -137,6 +140,39 @@ void QuickSort()
     }
 }
 
+void QuickSelect()
+{
+    std::vector<int> input{};
+
+    std::cout << "Reading file...\r";
+    if (std::ifstream inputFile{ "../source/Selection/unsortedArray01.txt", std::ios::in }; inputFile.is_open())
+    {
+        int num{};
+        while (inputFile >> num)
+        {
+            input.push_back(num);
+        }
+        inputFile.close();
+
+    }
+    else
+    {
+        std::cout << "Failed to open the file!\n";
+    }
+
+    if (!input.empty())
+    {
+        constexpr int order = 10003;
+        std::cout << "Finding the element...\r";
+        const auto start{ std::chrono::high_resolution_clock::now() };
+        int orderElement = Selection::QuickSelect(&input[0], 0, (int)input.size() - 1, order);
+        const auto end{ std::chrono::high_resolution_clock::now() };
+
+        std::cout << "Element found. << Element order: " << order << ", value: " << orderElement << "\n";
+        std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
+    }
+}
+
 void KargerMinCut()
 {
     uint64_t vertices {};
@@ -167,7 +203,7 @@ void KargerMinCut()
 
         const auto start{ std::chrono::high_resolution_clock::now() };
 
-        int minCut = MinCut::KargerMinCut({ vertices, edges }, vertices);
+        int minCut = MinCut::KargerMinCut({ vertices, edges }, (int)vertices);
         std:: cout << "Karger Min Cut Count -> " << minCut << "\n";
         const auto end{ std::chrono::high_resolution_clock::now() };
     	std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << ", Iterations: " << vertices << "\n";
