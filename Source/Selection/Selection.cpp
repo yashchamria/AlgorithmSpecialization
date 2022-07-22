@@ -1,8 +1,6 @@
 #include "PCH.h"
 #include "Selection.h"
 
-#include "Sorting/Sort.h"
-
 int Selection::QuickSelect(int array[], const int start, const int end, const int order)
 {
     if (order < 0 || order > end - start + 1)
@@ -18,11 +16,11 @@ int Selection::QuickSelect(int array[], const int start, const int end, const in
     {
         if (array[i] < array[pivotIndex])
         {
-            Sort::Swap(array[minIndex], array[i]);
+            Swap(array[minIndex], array[i]);
             ++minIndex;
         }
     }
-    Sort::Swap(array[minIndex], array[pivotIndex]);
+    Swap(array[minIndex], array[pivotIndex]);
 
     if (minIndex - start > order) // left array
     {

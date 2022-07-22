@@ -1,13 +1,6 @@
 #include "PCH.h"
 #include "Sort.h"
 
-void Sort::Swap(int& lhs, int& rhs)
-{
-    const int temp = lhs;
-    lhs = rhs;
-    rhs = temp;
-}
-
 bool Sort::IsMedian(int const value, int const lhs, int const rhs)
 {
     return (value < lhs && value > rhs) || (value > lhs && value < rhs);

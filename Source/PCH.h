@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <fstream>
-
 #include <string>
 #include <memory>
 #include <cstdint>
@@ -10,3 +9,5 @@
 #include <random>
 #include <cmath>
 #include <bitset>
+
+#include "Util.h"
