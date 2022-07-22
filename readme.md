@@ -8,7 +8,10 @@ Day 2: Implemented Merge sort and Inversion counting(number of pairs required to
 
 Day 3: Implemented Quick sort algorithm, which sorts the data in O(nlogn) on average with no extra space requirement. Tested different pivots to split the array to measure the performance difference.
 
-(Trying to speedrun some algorithms to cover the missed day and prepare for the final exam.)
+(Trying to speedrun some algorithms to cover the missed day.)
+
 Day 5: Executed Karger's algorithm to find the minimum cut(least number of edges that disconnects the graph into two parts). It is a Monte Carlo algorithm and only produces accurate results 1/n^2 times, so the algorithm needs to be run around n times to produce a moderate result. But, it runs in (O(n^2)) to compare to alternates(O(n^5)).
 
 Added QuickSelect(finds elements in an unsorted array for a given order). It is similar to quick sort but only takes O(n) time as it performs only one recursive call in each iteration with half the input size.
+
+Implemented closest pair algorithm(to find the closest points on a graph). A very clever algorithm that utilizes sorting and divide and conquer to achieve O(nlogn^2) time.

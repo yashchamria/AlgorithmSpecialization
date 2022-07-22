@@ -1,4 +1,6 @@
 #include "PCH.h"
+
+#include "Graphs/ClosestPair.h"
 #include "Graphs/Graph.h"
 #include "Graphs/MinCut.h"
 #include "Sorting/Sort.h"
@@ -10,6 +12,7 @@ void QuickSort();
 void QuickSelect();
 void KargerMinCut();
 void KaratsubaMultiplication();
+void ClosestPair();
 
 int main(int argc, char** argv)
 {
@@ -19,8 +22,10 @@ int main(int argc, char** argv)
     // KaratsubaMultiplication();
     // MergeSort();
     // QuickSort();
-    QuickSelect();
+    // QuickSelect();
     // KargerMinCut();
+
+    ClosestPair();
 
     std::cin.get();
     return 0;
@@ -206,12 +211,30 @@ void KargerMinCut()
         int minCut = MinCut::KargerMinCut({ vertices, edges }, (int)vertices);
         std:: cout << "Karger Min Cut Count -> " << minCut << "\n";
         const auto end{ std::chrono::high_resolution_clock::now() };
-    	std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << ", Iterations: " << vertices << "\n";
-
+        std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << ", Iterations: " << vertices << "\n";
     }
     else
     {
         std::cout << "Failed to open the file!\n";
     }
+}
 
+void ClosestPair()
+{
+    constexpr int vertexCount = 24;
+    Vec2Int vertices[vertexCount] =
+    {
+        {4, 7}, {6, 30}, {20, 0}, {50, 10}, {1, 10}, {66, 4},
+        {19, 31}, {2, 90}, {4, 50}, {5, 1}, {12, 10}, {3, 4},
+        {9, 23}, {1, 30}, {4, 35}, {65, 19}, {22, 7}, {8, 90},
+        {2, 80}, {2, 25}, {0, 48}, {55, 98}, {82, 0}, {3, 24},
+    };
+
+    const auto start{ std::chrono::high_resolution_clock::now() };
+    const auto closestPair = ClosestPair::GetClosestPair(vertices, 0, vertexCount - 1);
+    const auto end{ std::chrono::high_resolution_clock::now() };
+    std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
+
+    std::cout << "Closest Pair -> " << closestPair.first << ", " << closestPair.second << "\n";
+    std::cout << "Distance -> " << ClosestPair::GetDistance(closestPair) << "\n";
 }

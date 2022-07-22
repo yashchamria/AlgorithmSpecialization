@@ -2,6 +2,20 @@
 
 using Vertex = uint64_t;
 
+struct Vec2Int
+{
+public:
+	int x, y;
+
+public:
+	friend std::ostream& operator<< (std::ostream& out, const Vec2Int& vec);
+};
+
+inline std::ostream& operator<< (std::ostream& out, const Vec2Int& vec)
+{
+	return out << "(" << vec.x << ", " << vec.y << ")";
+}
+
 struct Edge final
 {
 public:
