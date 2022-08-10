@@ -1,5 +1,6 @@
 #include "PCH.h"
 #include "Selection.h"
+#include "Util.h"
 
 int Selection::QuickSelect(int array[], const int start, const int end, const int order)
 {

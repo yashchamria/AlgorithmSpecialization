@@ -1,5 +1,6 @@
 #include "PCH.h"
 #include "Sort.h"
+#include "Util.h"
 
 bool Sort::IsMedian(int const value, int const lhs, int const rhs)
 {

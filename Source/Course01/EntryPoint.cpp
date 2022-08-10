@@ -1,3 +1,7 @@
+/******************************************************************************************
+********** Divide and Conquer, Sorting and Searching, and Randomized Algorithms ***********
+******************************************************************************************/
+
 #include "PCH.h"
 
 #include "Graphs/ClosestPair.h"
@@ -17,7 +21,7 @@ void ClosestPair();
 int main(int argc, char** argv)
 {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-    srand((unsigned int)time(nullptr));
+    srand(static_cast<unsigned>(time(nullptr)));
 
     // KaratsubaMultiplication();
     // MergeSort();
