@@ -23,11 +23,11 @@ int main(int argc, char** argv)
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     srand(static_cast<unsigned>(time(nullptr)));
 
-    // KaratsubaMultiplication();
-    // MergeSort();
-    // QuickSort();
-    // QuickSelect();
-    // KargerMinCut();
+    KaratsubaMultiplication();
+    MergeSort();
+    QuickSort();
+    QuickSelect();
+    KargerMinCut();
 
     ClosestPair();
 
@@ -58,7 +58,7 @@ void MergeSort()
     std::vector<int> input{};
 
     std::cout << "Reading file...\r";
-    if (std::ifstream inputFile {"../source/Sorting/unsortedArray01.txt", std::ios::in}; inputFile.is_open())
+    if (std::ifstream inputFile {"../source/Course01/Sorting/unsortedArray01.txt", std::ios::in}; inputFile.is_open())
     {
         int num{};
         while (inputFile >> num)
@@ -84,7 +84,7 @@ void MergeSort()
         std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
         std::cout << "Outputting file...\r";
 
-        if (std::fstream outputFile{ "../binaries/MergeSort.txt", std::ios::out }; outputFile.is_open())
+        if (std::fstream outputFile{ "../source/Course01/Sorting/result_sortedArray01.txt", std::ios::out }; outputFile.is_open())
         {
             for (const int number : input)
             {
@@ -92,7 +92,7 @@ void MergeSort()
 }
             outputFile.close();
 
-            std::cout << "Output file saved -> binaries/MergeSort.txt\n";
+            std::cout << "Output file saved.\n";
         }
         else
         {
@@ -106,7 +106,7 @@ void QuickSort()
     std::vector<int> input{};
 
     std::cout << "Reading file...\r";
-    if (std::ifstream inputFile{ "../source/Sorting/unsortedArray02.txt", std::ios::in }; inputFile.is_open())
+    if (std::ifstream inputFile{ "../source/Course01/Sorting/unsortedArray02.txt", std::ios::in }; inputFile.is_open())
     {
         int num{};
         while (inputFile >> num)
@@ -132,7 +132,7 @@ void QuickSort()
         std::cout << "Processing Time: " << (std::chrono::duration<float>)(end - start) << "\n";
         std::cout << "Outputting file...\r";
 
-        if (std::fstream outputFile{ "../binaries/QuickSort.txt", std::ios::out }; outputFile.is_open())
+        if (std::fstream outputFile{ "../source/Course01/Sorting/result_sortedArray02.txt", std::ios::out }; outputFile.is_open())
         {
             for (const int number : input)
             {
@@ -140,7 +140,7 @@ void QuickSort()
             }
             outputFile.close();
 
-            std::cout << "Output file saved -> binaries/QuickSort.txt\n";
+            std::cout << "Output file saved.\n";
         }
         else
         {
@@ -154,7 +154,7 @@ void QuickSelect()
     std::vector<int> input{};
 
     std::cout << "Reading file...\r";
-    if (std::ifstream inputFile{ "../source/Selection/unsortedArray01.txt", std::ios::in }; inputFile.is_open())
+    if (std::ifstream inputFile{ "../source/Course01/Selection/unsortedArray01.txt", std::ios::in }; inputFile.is_open())
     {
         int num{};
         while (inputFile >> num)
@@ -188,7 +188,7 @@ void KargerMinCut()
     std::vector<Edge> edges {};
 
     std::cout << "Reading file...\r";
-    if (std::ifstream inputFile{ "../source/Graphs/GraphData.txt", std::ios::in }; inputFile.is_open())
+    if (std::ifstream inputFile{ "../source/Course01/Graphs/GraphData.txt", std::ios::in }; inputFile.is_open())
     {
         std::string line {};
         while (std::getline(inputFile, line))
