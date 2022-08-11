@@ -11,12 +11,14 @@
 #include "Multiplication/Multiplication.h"
 #include "Selection/Selection.h"
 
+using namespace Course01;
+
 void MergeSort();
 void QuickSort();
 void QuickSelect();
 void KargerMinCut();
 void KaratsubaMultiplication();
-void ClosestPair();
+void GetClosestPair();
 
 int main(int argc, char** argv)
 {
@@ -29,7 +31,7 @@ int main(int argc, char** argv)
     QuickSelect();
     KargerMinCut();
 
-    ClosestPair();
+    GetClosestPair();
 
     std::cin.get();
     return 0;
@@ -223,7 +225,7 @@ void KargerMinCut()
     }
 }
 
-void ClosestPair()
+void GetClosestPair()
 {
     constexpr int vertexCount = 24;
     Vec2Int vertices[vertexCount] =

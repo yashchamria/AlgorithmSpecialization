@@ -1,13 +1,16 @@
 #pragma once
 #include "Graph.h"
 
-using VertexGroup = int;
-
-class MinCut
+namespace Course01
 {
-public:
-	static int KargerMinCut(const Graph& graph, const int iteration);
+	using VertexGroup = int;
 
-private:
-	static int KargerMinCut_Internal(Vertex vertices[], const uint64_t vertexCount, const Edge edges[], bool collapsedEdges[], const uint64_t edgeCount);
-};
+	class MinCut
+	{
+	public:
+		static int KargerMinCut(const Graph& graph, const int iteration);
+
+	private:
+		static int KargerMinCut_Internal(Vertex vertices[], const uint64_t vertexCount, const Edge edges[], bool collapsedEdges[], const uint64_t edgeCount);
+	};
+}

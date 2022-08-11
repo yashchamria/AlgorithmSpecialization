@@ -1,13 +1,15 @@
 #pragma once
 
-struct Vec2Int;
-
-class ClosestPair final
+namespace Course01
 {
-public:
-    static std::pair<Vec2Int, Vec2Int> GetClosestPair(Vec2Int vertices[], const int start, const int end);
+    struct Vec2Int;
 
-public:
-    inline static float GetDistance(const Vec2Int& v1, const Vec2Int& v2);
-    inline static float GetDistance(const std::pair<Vec2Int, Vec2Int> pair);
-};
+    class ClosestPair final
+    {
+    public:
+        static std::pair<Vec2Int, Vec2Int> GetClosestPair(Vec2Int vertices[], const int start, const int end);
+
+        static float GetDistance(const Vec2Int& v1, const Vec2Int& v2);
+        static float GetDistance(const std::pair<Vec2Int, Vec2Int> pair);
+    };
+}

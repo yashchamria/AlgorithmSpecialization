@@ -2,34 +2,37 @@
 #include "Selection.h"
 #include "Util.h"
 
-int Selection::QuickSelect(int array[], const int start, const int end, const int order)
+namespace Course01
 {
-    if (order < 0 || order > end - start + 1)
+    int Selection::QuickSelect(int array[], const int start, const int end, const int order)
     {
-        std::cout << "Order is out of bound.\n";
-        return INT_MAX;
-    }
-
-    const int pivotIndex {end};
-    int minIndex {start};
-
-    for (int i = minIndex; i < end; ++i)
-    {
-        if (array[i] < array[pivotIndex])
+        if (order < 0 || order > end - start + 1)
         {
-            Swap(array[minIndex], array[i]);
-            ++minIndex;
+            std::cout << "Order is out of bound.\n";
+            return INT_MAX;
         }
-    }
-    Swap(array[minIndex], array[pivotIndex]);
 
-    if (minIndex - start > order) // left array
-    {
-        return QuickSelect(array, start, minIndex - 1, order);
+        const int pivotIndex{ end };
+        int minIndex{ start };
+
+        for (int i = minIndex; i < end; ++i)
+        {
+            if (array[i] < array[pivotIndex])
+            {
+                Swap(array[minIndex], array[i]);
+                ++minIndex;
+            }
+        }
+        Swap(array[minIndex], array[pivotIndex]);
+
+        if (minIndex - start > order) // left array
+        {
+            return QuickSelect(array, start, minIndex - 1, order);
+        }
+        if (minIndex - start < order) // right array
+        {
+            return QuickSelect(array, minIndex + 1, end, order + start - (minIndex + 1));
+        }
+        return array[minIndex];
     }
-    if(minIndex - start < order) // right array
-    {
-        return QuickSelect(array, minIndex + 1, end,order + start - (minIndex + 1));
-    }
-    return array[minIndex];
 }
