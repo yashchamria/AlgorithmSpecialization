@@ -18,3 +18,5 @@ Course 02 - Graph Search, Shortest Paths, and Data Structures:
 
 Day 1: Implemented Kosaraju's algorithm to find the strongly connected components for a directed graph. The algorithm elegantly utilizes multiple DFS to achieve a running time of O(V+E).
 Added Topological sort to find the linear transversal order for the vertices of a directed acyclic graph. This algorithm also relies on DFS and runs in O(V + E) time.
+
+Day 2: Implemented Dijkstra's algorithm to find the shortest path. The implementation uses the min-heap to store the vertex distance making the lookup for minimum distance constant time. This approach gives the running time of O(ElogV).

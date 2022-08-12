@@ -46,3 +46,16 @@ project "TopologicalSort"
 		"TopologicalSort/**.h",
 		"TopologicalSort/**.cpp"
 	}
+
+project "Dijkstra"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"Dijkstra/**.h",
+		"Dijkstra/**.cpp"
+	}
