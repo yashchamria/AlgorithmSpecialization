@@ -33,3 +33,16 @@ project "Kosaraju"
 		"Kosaraju/**.h",
 		"Kosaraju/**.cpp"
 	}
+
+project "TopologicalSort"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"TopologicalSort/**.h",
+		"TopologicalSort/**.cpp"
+	}
