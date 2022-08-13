@@ -72,3 +72,16 @@ project "MedianMaintenance"
 		"MedianMaintenance/**.h",
 		"MedianMaintenance/**.cpp"
 	}
+
+project "HeapSort"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"HeapSort/**.h",
+		"HeapSort/**.cpp"
+	}

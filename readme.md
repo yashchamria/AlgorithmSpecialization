@@ -21,3 +21,5 @@ Added Topological sort to find the linear transversal order for the vertices of 
 
 Day 2: Implemented Dijkstra's algorithm to find the shortest path. The implementation uses the min-heap to store the vertex distance making the lookup for minimum distance constant time. This approach gives the running time of O(ElogV).
 Implemented a Median maintenance algorithm for an ongoing stream of data using multiple heaps in O(logn) running time.
+
+Day 3: Implemented heap sort using heapify. The algorithm is similar to selection sort but instead of the linear search every iteration it maintains a max heap for constant lookup. The running time is O(nlogn).

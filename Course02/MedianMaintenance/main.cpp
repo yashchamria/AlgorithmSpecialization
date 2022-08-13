@@ -8,6 +8,7 @@
 #include <iostream>
 #include <numeric>
 #include <queue>
+#include <sstream>
 #include <string>
 
 using MinHeap = std::priority_queue<int, std::vector<int>, std::greater<>>;
