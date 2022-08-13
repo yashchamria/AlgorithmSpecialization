@@ -59,3 +59,16 @@ project "Dijkstra"
 		"Dijkstra/**.h",
 		"Dijkstra/**.cpp"
 	}
+
+project "MedianMaintenance"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"MedianMaintenance/**.h",
+		"MedianMaintenance/**.cpp"
+	}
