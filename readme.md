@@ -23,3 +23,5 @@ Day 2: Implemented Dijkstra's algorithm to find the shortest path. The implement
 Implemented a Median maintenance algorithm for an ongoing stream of data using multiple heaps in O(logn) running time.
 
 Day 3: Implemented heap sort using heapify. The algorithm is similar to selection sort but instead of the linear search every iteration it maintains a max heap for constant lookup. The running time is O(nlogn).
+
+Day 4: Solved the classic Two-sum problem for a range of targets using the hash tables.
