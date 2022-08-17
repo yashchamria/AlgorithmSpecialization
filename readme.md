@@ -25,3 +25,7 @@ Implemented a Median maintenance algorithm for an ongoing stream of data using m
 Day 3: Implemented heap sort using heapify. The algorithm is similar to selection sort but instead of the linear search every iteration it maintains a max heap for constant lookup. The running time is O(nlogn).
 
 Day 4: Solved the classic Two-sum problem for a range of targets using the hash tables.
+
+Course 03 - Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming:
+
+Day 1: Implemented a greedy algorithm to schedule jobs in the most optimal way possible based on job priority and completion time. The running time is O(nlogn).
