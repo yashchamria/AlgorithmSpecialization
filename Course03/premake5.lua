@@ -33,3 +33,16 @@ project "JobScheduler"
 		"JobScheduler/**.h",
 		"JobScheduler/**.cpp"
 	}
+
+project "PrimMST"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"PrimMST/**.h",
+		"PrimMST/**.cpp"
+	}
