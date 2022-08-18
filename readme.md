@@ -30,3 +30,5 @@ Course 03 - Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming:
 
 Day 1: Implemented a greedy algorithm to schedule jobs in the most optimal way possible based on job priority and completion time. The running time is O(nlogn).
 Implemented Prim's eager algorithm to find the minimum spanning tree using the min heap to store the vertex and the lowest edge cost to get there as the key. The running time is O(ElogV).
+
+Day2 : Implemented Kruskal's algorithm to find the minimum spanning tree using the blazingly fast union-find by rank data structure with path compression. This gives a running time of O(ElogV).

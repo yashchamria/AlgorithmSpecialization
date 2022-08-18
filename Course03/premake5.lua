@@ -46,3 +46,16 @@ project "PrimMST"
 		"PrimMST/**.h",
 		"PrimMST/**.cpp"
 	}
+
+project "KruskalMST"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"KruskalMST/**.h",
+		"KruskalMST/**.cpp"
+	}
