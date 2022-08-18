@@ -59,3 +59,16 @@ project "KruskalMST"
 		"KruskalMST/**.h",
 		"KruskalMST/**.cpp"
 	}
+
+project "Cluster"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"Cluster/**.h",
+		"Cluster/**.cpp"
+	}

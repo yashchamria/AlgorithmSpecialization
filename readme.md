@@ -32,3 +32,4 @@ Day 1: Implemented a greedy algorithm to schedule jobs in the most optimal way p
 Implemented Prim's eager algorithm to find the minimum spanning tree using the min heap to store the vertex and the lowest edge cost to get there as the key. The running time is O(ElogV).
 
 Day2 : Implemented Kruskal's algorithm to find the minimum spanning tree using the blazingly fast union-find by rank data structure with path compression. This gives a running time of O(ElogV).
+Similar to Kruskal, implemented a clustering algorithm for a graph based on the edge cost that relies on union-find data structure and runs in the same O(ElogE) time.
