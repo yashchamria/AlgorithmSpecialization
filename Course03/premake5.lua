@@ -72,3 +72,16 @@ project "Cluster"
 		"Cluster/**.h",
 		"Cluster/**.cpp"
 	}
+
+project "HuffmanCoding"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"HuffmanCoding/**.h",
+		"HuffmanCoding/**.cpp"
+	}
