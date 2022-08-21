@@ -31,7 +31,9 @@ Course 03 - Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming:
 Day 1: Implemented a greedy algorithm to schedule jobs in the most optimal way possible based on job priority and completion time. The running time is O(nlogn).
 Implemented Prim's eager algorithm to find the minimum spanning tree using the min heap to store the vertex and the lowest edge cost to get there as the key. The running time is O(ElogV).
 
-Day2 : Implemented Kruskal's algorithm to find the minimum spanning tree using the blazingly fast union-find by rank data structure with path compression. This gives a running time of O(ElogV).
+Day 2 : Implemented Kruskal's algorithm to find the minimum spanning tree using the blazingly fast union-find by rank data structure with path compression. This gives a running time of O(ElogV).
 Similar to Kruskal, implemented a clustering algorithm for a graph based on the edge cost that relies on union-find data structure and runs in the same O(ElogE) time. Expanded the clustering algorithm to work with the large data set only expressed as hammering distance. Utilized hash tables for repeated lookups as sorting isn't viable.
 
-Day3 : Implemented Huffman Coding algorithm to achieve the lossless compression using the variable size bits to store the input based on their frequencies. The algorithm uses multiple queues and sorting to achieve O(nlogn) running time.
+Day 3 : Implemented Huffman Coding algorithm to achieve the lossless compression using the variable size bits to store the input based on their frequencies. The algorithm uses multiple queues and sorting to achieve O(nlogn) running time.
+
+Day 4: Solved the weighted independent sum problem for a path graph using the dynamic programming paradigm and memoization to achieve a linear time of O(n).
