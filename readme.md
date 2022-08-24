@@ -37,3 +37,5 @@ Similar to Kruskal, implemented a clustering algorithm for a graph based on the 
 Day 3 : Implemented Huffman Coding algorithm to achieve the lossless compression using the variable size bits to store the input based on their frequencies. The algorithm uses multiple queues and sorting to achieve O(nlogn) running time.
 
 Day 4: Solved the weighted independent sum problem for a path graph using the dynamic programming paradigm and memoization to achieve a linear time of O(n).
+
+Day 7: Implemented 0/1 Knapsack algorithm to find the maximum value subset of items for a given capacity. The algorithm uses the dynamic programming paradigm to achieve the solution in O(nw) running time.

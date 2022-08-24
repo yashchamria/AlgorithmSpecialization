@@ -14,6 +14,24 @@ using Weight = uint32_t;
 using Item = std::pair<Value, Weight>;
 using Sack = std::vector<Item>;
 
+Value GetOptimalValue(const Sack& data, const uint32_t capacity)
+{
+	std::vector<Value> memoizationSet(capacity + 1, 0);
+
+	for (int i = 1; i < data.size() + 1; ++i)
+	{
+		const auto& item = data[i - 1];
+
+		for (int w = capacity; w > 0; --w)
+		{
+			if (item.second > w) { continue; }
+			memoizationSet[w] = std::max(memoizationSet[w], memoizationSet[w - item.second] + item.first);
+		}
+	}
+
+	return memoizationSet[capacity];
+}
+
 Sack GetOptimalSack(const Sack& data, const uint32_t capacity)
 {
 	std::vector memoizationSet(data.size() + 1, std::vector<Weight>(capacity + 1)); // 2D array of item V Weight.
@@ -78,10 +96,12 @@ int main()
 
 	//sackCapacity = 7;
 	//const Sack smallData2{ {2, 3}, {2, 1}, {4, 3}, {5, 4}, {3, 2} };
-	const auto knapsack = GetOptimalSack(data, sackCapacity);
+	//const auto knapsack = GetOptimalSack(data, sackCapacity);
 
-	std::cout << "Maximum value: " <<
-		std::accumulate(knapsack.cbegin(), knapsack.cend(), 0, [](int sum, const auto& item) { return sum + std::get<0>(item); });
+	//std::cout << "Maximum value: " <<
+	//	std::accumulate(knapsack.cbegin(), knapsack.cend(), 0, [](int sum, const auto& item) { return sum + std::get<0>(item); });
+
+	std::cout << "Maximum value: " << GetOptimalValue(data, sackCapacity);
 
 	std::cin.get();
 	return 0;
