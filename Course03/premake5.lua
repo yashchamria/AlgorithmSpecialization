@@ -98,3 +98,16 @@ project "IndependentSet"
 		"IndependentSet/**.h",
 		"IndependentSet/**.cpp"
 	}
+
+project "Knapsack"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"Knapsack/**.h",
+		"Knapsack/**.cpp"
+	}
