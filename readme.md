@@ -40,3 +40,7 @@ Day 4: Solved the weighted independent sum problem for a path graph using the dy
 
 Day 7: Implemented 0/1 Knapsack algorithm to find the maximum value subset of items for a given capacity. The algorithm uses the dynamic programming paradigm to achieve the solution in O(nw) running time.
 Implemented Needleman-Wunsch sequence alignment algorithm to find the optimal sequence for two given strings. The algorithm uses the dynamic programming paradigm to achieve the solution in O(nm) running time.
+
+Course 04: Shortest Paths Revisited, NP-Complete Problems and What To Do About Them
+
+Day 1: Implemented Bellman-Ford algorithm to find the shortest path or detect negative cycles for a given graph in O(nm) running time and linear space complexity O(n).
