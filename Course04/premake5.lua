@@ -33,3 +33,16 @@ project "BellmanFord"
 		"BellmanFord/**.h",
 		"BellmanFord/**.cpp"
 	}
+
+project "FloydWarshall"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"FloydWarshall/**.h",
+		"FloydWarshall/**.cpp"
+	}

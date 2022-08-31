@@ -50,7 +50,7 @@ int main()
 		return -1;
 	}
 
-	uint32_t VertexCount {0}, edgeCount{ 0 };
+	uint32_t VertexCount {0}, edgeCount {0};
 	inputFile >> VertexCount >> edgeCount;
 
 	Graph graph(VertexCount, (edgeCount));
@@ -61,6 +61,7 @@ int main()
 		graph.second[index++] = edge;
 	}
 	inputFile.close();
+	std::cout << "Processing data...\r";
 
 	constexpr Vertex source = 1;
 	const auto minCost = GetShortestPaths(graph, source);
