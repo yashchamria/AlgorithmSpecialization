@@ -56,7 +56,7 @@ int main()
 {
 	// Reading the input.
 	std::cout << "Reading data...\r";
-	std::ifstream inputFile{ "../BellmanFord/g3.txt", std::ios::in };
+	std::ifstream inputFile{ "../FloydWarshall/g3.txt", std::ios::in };
 	if (!inputFile.is_open())
 	{
 		std::cout << "Failed to open the file!\n";
