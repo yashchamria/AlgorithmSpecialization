@@ -72,3 +72,16 @@ project "VertexCover"
 		"VertexCover/**.h",
 		"VertexCover/**.cpp"
 	}
+	
+project "TravelingSalesman"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"TravelingSalesman/**.h",
+		"TravelingSalesman/**.cpp"
+	}
