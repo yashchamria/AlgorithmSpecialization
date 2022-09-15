@@ -56,3 +56,4 @@ Day 12: Implemented Vertex cover algorithm(NP-Complete) to find the smallest sub
 force O(n^K) running time.
 Day 13: Implemented the Traveling salesman problem for a complete graph using the dynamic programming paradigm. The algorithm runs in exponential time O(n^2*2^n) better than the naive O(n!) running time.
 Day 18: Implemented the approximate algorithm for the 0/1 knapsack problem. The algorithm reduces the item values by a factor and runs a dynamic algorithm as a subroutine to achieve the running time of O(n^2Vmax). With a well-defined Vmax, the algorithm runs in O(n^3 / epsilon), where epsilon governs the accuracy of the solution.
+Implemented a simple greedy heuristic-based approximation algorithm for the travelling salesman problem. The algorithm chooses the next nearest node from the current to traverse the graph and runs in O(n^2) to find the optimal tour.
