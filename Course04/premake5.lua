@@ -98,3 +98,16 @@ project "Knapsack"
 		"Knapsack/**.h",
 		"Knapsack/**.cpp"
 	}
+
+project "MaxCut"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"MaxCut/**.h",
+		"MaxCut/**.cpp"
+	}
