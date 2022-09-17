@@ -111,3 +111,16 @@ project "MaxCut"
 		"MaxCut/**.h",
 		"MaxCut/**.cpp"
 	}
+
+project "StableMatching"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"StableMatching/**.h",
+		"StableMatching/**.cpp"
+	}

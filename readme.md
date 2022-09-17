@@ -1,7 +1,6 @@
-This project contains algorithms I studied during Stanford's Algorithms Specialization on Coursera. Throughout the course, I will try to implement each algorithm and optional content as frequently as possible.
-Everything will be in C++. Premake5 is used to generate the project and Chrono is used to output the processing time.
+This repo will contain all the algorithms I executed while going through **Stanford's Algorithms Specialization** program on Coursera. I will use Modern C++ and Premake5 for the project exclusively. The main goal would be to code as frequently as possible.
 
-Course 01 - Divide and Conquer, Sorting and Searching, and Randomized Algorithms:
+**Course 01 - Divide and Conquer, Sorting and Searching, and Randomized Algorithms:**
 
 Day 1: Implemented Karatsuba multiplication which runs in O(n^1.6) time compared to traditional multiplication's O(n^2) time. I used strings to store the large numbers.
 
@@ -17,7 +16,7 @@ algorithm needs to be run around n times to produce a moderate result. But, it r
 Added QuickSelect(finds elements in an unsorted array for a given order). It is similar to quick sort but only takes O(n) time as it performs only one recursive call in each iteration with half the input size.
 Implemented closest pair algorithm(to find the closest points on a graph). A very clever algorithm that utilizes sorting and divide and conquer to achieve O(nlogn^2) time.
 
-Course 02 - Graph Search, Shortest Paths, and Data Structures:
+**Course 02 - Graph Search, Shortest Paths, and Data Structures:**
 
 Day 1: Implemented Kosaraju's algorithm to find the strongly connected components for a directed graph. The algorithm elegantly utilizes multiple DFS to achieve a running time of O(V+E).
 Added Topological sort to find the linear transversal order for the vertices of a directed acyclic graph. This algorithm also relies on DFS and runs in O(V + E) time.
@@ -30,7 +29,7 @@ Day 3: Implemented heap sort using heapify. The algorithm is similar to selectio
 
 Day 4: Solved the classic Two-sum problem for a range of targets using the hash tables.
 
-Course 03 - Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming:
+**Course 03 - Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming:**
 
 Day 1: Implemented a greedy algorithm to schedule jobs in the most optimal way possible based on job priority and completion time. The running time is O(nlogn).
 Implemented Prim's eager algorithm to find the minimum spanning tree using the min heap to store the vertex and the lowest edge cost to get there as the key. The running time is O(ElogV).
@@ -46,15 +45,22 @@ Day 4: Solved the weighted independent sum problem for a path graph using the dy
 Day 7: Implemented 0/1 Knapsack algorithm to find the maximum value subset of items for a given capacity. The algorithm uses the dynamic programming paradigm to achieve the solution in O(nw) running time.
 Implemented Needleman-Wunsch sequence alignment algorithm to find the optimal sequence for two given strings. The algorithm uses the dynamic programming paradigm to achieve the solution in O(nm) running time.
 
-Course 04: Shortest Paths Revisited, NP-Complete Problems and What To Do About Them
+**Course 04: Shortest Paths Revisited, NP-Complete Problems and What To Do About Them**
 
 Day 1: Implemented Bellman-Ford algorithm to find the shortest path or detect negative cycles for a given graph in O(nm) running time and linear space complexity O(n).
+
 Day 4: Implemented Floyd-Warshall algorithm to find the "all pairs all shortest path" problems for a given graph or negative cycles in O(n^3) running time using dynamic programming paradigm.
+
 Day 5: Implemented Johnson's algorithm to find the "all pairs all shortest path" problems for a given graph or negative cycles in O(n^2logn) running time. Johnson's algorithm uses the BellmanFord algorithm to
 transform all the edge weights to a positive number and then Dijkstra's algorithm to find all the shortest paths.
+
 Day 12: Implemented Vertex cover algorithm(NP-Complete) to find the smallest subset of vertices that covers every edge of the graph. The algorithm takes exponential O(n2^k) running time, much better than the brute
 force O(n^K) running time.
+
 Day 13: Implemented the Traveling salesman problem for a complete graph using the dynamic programming paradigm. The algorithm runs in exponential time O(n^2*2^n) better than the naive O(n!) running time.
+
 Day 18: Implemented the approximate algorithm for the 0/1 knapsack problem. The algorithm reduces the item values by a factor and runs a dynamic algorithm as a subroutine to achieve the running time of O(n^2Vmax). With a well-defined Vmax, the algorithm runs in O(n^3 / epsilon), where epsilon governs the accuracy of the solution.
 Implemented a simple greedy heuristic-based approximation algorithm for the travelling salesman problem. The algorithm chooses the next nearest node from the current to traverse the graph and runs in O(n^2) to find the optimal tour.
+
 Day 19: Implemented the approximation algorithm to solve the maximum cut problem(partitioning the graph into two sets to maximize the edges passing between them) for an undirected graph using a local search paradigm in polynomial time.
+Implemented the Gale–Shapley algorithm to find stable matching for two equal-sized sets based on the provided preferences for each element which runs in O(n^2) running time.
