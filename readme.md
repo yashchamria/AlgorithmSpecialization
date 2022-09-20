@@ -64,3 +64,5 @@ Implemented a simple greedy heuristic-based approximation algorithm for the trav
 
 Day 19: Implemented the approximation algorithm to solve the maximum cut problem(partitioning the graph into two sets to maximize the edges passing between them) for an undirected graph using a local search paradigm in polynomial time.
 Implemented the Gale–Shapley algorithm to find stable matching for two equal-sized sets based on the provided preferences for each element which runs in O(n^2) running time.
+
+Day 21: Implemented the maximum flow minimum cut algorithm to maximize the flow that can be pushed through for a directed graph with limited flow capacity per edge, running in O(n*maxFlow) time.

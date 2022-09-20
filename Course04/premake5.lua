@@ -124,3 +124,16 @@ project "StableMatching"
 		"StableMatching/**.h",
 		"StableMatching/**.cpp"
 	}
+
+project "MaxFlow"
+	kind "ConsoleApp"
+	location "%{wks.location}/intermediate"
+
+	targetdir ("%{wks.location}/binaries/" ..outputDir.. "/")
+	objdir ("%{wks.location}/intermediate/" ..outputDir.. "/")
+
+	files
+	{
+		"MaxFlow/**.h",
+		"MaxFlow/**.cpp"
+	}
