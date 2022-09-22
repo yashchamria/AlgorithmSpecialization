@@ -66,3 +66,5 @@ Day 19: Implemented the approximation algorithm to solve the maximum cut problem
 Implemented the Gale–Shapley algorithm to find stable matching for two equal-sized sets based on the provided preferences for each element which runs in O(n^2) running time.
 
 Day 21: Implemented the maximum flow minimum cut algorithm to maximize the flow that can be pushed through for a directed graph with limited flow capacity per edge, running in O(n*maxFlow) time.
+
+Day 23: Solved the 2 Sat problem using Kosaraju's strongly connected component algorithm to find if a given boolean expression(CNF) is satisfiable or not, with a linear running time of O(E + V).
